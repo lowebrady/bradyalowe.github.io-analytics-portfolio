@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Trending Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; YouTube Trending Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">01 — Content Analytics / Excel</span>
+  <h1>YouTube Trending<br><em>Data Analysis</em></h1>
+  <p class="cs-summary">Analyzed 6,000+ trending YouTube videos to surface the performance drivers that separate viral content from the rest — using Excel pivot tables, histograms, and summary statistics to deliver actionable insights on reach and engagement.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Data Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Excel, Pivot Tables, Data Visualization</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Dataset</span>
+      <span class="meta-val">6,000+ YouTube Trending Videos</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">MSU Global Technology Experience</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — The Question</div>
+    <h2>What actually makes a YouTube video trend?</h2>
+    <p>YouTube's trending page is one of the most valuable pieces of real estate on the internet — but the factors that drive a video there are poorly understood. Is it views? Likes? Comment velocity? Category? Upload timing? The answer has major implications for content strategy and platform marketing.</p>
+    <p>This project set out to analyze a dataset of 6,000+ trending videos across categories, regions, and time periods to find <strong>which variables most consistently predict trending performance</strong> — and translate those findings into recommendations a content team could actually act on.</p>
+    <div class="highlight-block">
+      <p>"With 6,000 rows of data, the challenge isn't collecting insights — it's knowing which questions to ask. Start with the business goal and work backwards to the analysis."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Data & Approach</div>
+    <h2>Cleaning, structuring, then questioning</h2>
+    <p>The raw dataset required significant cleaning before any analysis could begin — inconsistent date formats, blank fields in key columns, and duplicate entries from videos that trended across multiple days all had to be addressed systematically.</p>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Data Cleaning</strong> Removed duplicates using Excel's Remove Duplicates function, standardized date fields with TEXT() and DATEVALUE(), and used IFERROR() to handle missing values in engagement columns without corrupting aggregate formulas.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Category Analysis via Pivot Tables</strong> Built pivot tables breaking down average views, likes, comment counts, and like-to-dislike ratios by video category. Sorted by median (not mean) to reduce the distortion from outlier mega-viral videos.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Engagement Rate Calculation</strong> Created a calculated engagement rate column (likes + comments / views) and used pivot tables to compare engagement across categories — revealing that high-view categories weren't always the highest-engagement ones.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Histograms & Distribution Analysis</strong> Built histograms of view counts, trending duration (days on trending page), and upload-to-trending lag time to understand the distribution shapes and identify where most videos cluster.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Summary Tables & Visualization</strong> Consolidated findings into executive-style summary tables with conditional formatting to make patterns immediately visible without requiring the reader to interpret raw data.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Findings</div>
+    <h2>What the data revealed</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">6K+</span>
+        <h4>Videos Analyzed</h4>
+        <p>Across multiple categories, upload dates, and trending durations — cleaned and structured before analysis.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Top 3</span>
+        <h4>Categories by Engagement</h4>
+        <p>Entertainment, Music, and How-To & Style consistently outperformed News & Politics and Sports on engagement rate — despite lower raw view counts.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">&lt;48h</span>
+        <h4>Median Trending Lag</h4>
+        <p>Most videos reached trending within 48 hours of upload — suggesting that early velocity (first-day views and likes) is the strongest predictor of trending status.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">2.3×</span>
+        <h4>Engagement Lift</h4>
+        <p>Videos with comment sections enabled had 2.3× higher engagement rates than those with comments disabled — comments signal community, which the algorithm rewards.</p>
+      </div>
+    </div>
+    <p>One counterintuitive finding: <strong>longer videos didn't perform worse</strong>. The dataset showed no significant negative correlation between video length and trending performance — challenging the conventional "keep it short" wisdom for the trending page specifically.</p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Recommendations</div>
+    <h2>Turning data into content strategy</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Prioritize the first 24 hours</strong> Since trending lag is so short, initial upload promotion (email lists, social posts, community posts) has outsized impact. Budget most promotional effort at launch, not day 3.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Never disable comments</strong> The engagement rate lift from enabled comments is significant enough to outweigh moderation concerns for most content types. Use comment pinning and filters instead of disabling entirely.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Optimize for engagement rate, not raw views</strong> Categories like Entertainment trend with fewer absolute views than News because their engagement rates are higher. A smaller but more engaged audience is algorithmically more valuable.</div>
+      </li>
+    </ul>
+    <div class="outcomes-row">
+      <div class="outcome">
+        <span class="big">6K+</span>
+        <p>Videos in dataset</p>
+      </div>
+      <div class="outcome">
+        <span class="big">5</span>
+        <p>Pivot tables built</p>
+      </div>
+      <div class="outcome">
+        <span class="big">3</span>
+        <p>Actionable recommendations delivered</p>
+      </div>
+      <div class="outcome">
+        <span class="big">GTE</span>
+        <p>Global Tech Experience program</p>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag">Excel</span>
+      <span class="tag">Pivot Tables</span>
+      <span class="tag">Data Cleaning</span>
+      <span class="tag">Histograms</span>
+      <span class="tag">Engagement Analytics</span>
+      <span class="tag">Content Strategy</span>
+      <span class="tag">Conditional Formatting</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="index.html#projects">
+    <span class="nav-dir">← Back to</span>
+    <h4>All Projects</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-bart.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>BART Ridership Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

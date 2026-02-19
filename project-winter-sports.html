@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Winter Sports Interest Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Winter Sports Interest Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">04 — Trend Analytics / Google Trends & Excel</span>
+  <h1>Winter Sports<br><em>Interest Analysis</em></h1>
+  <p class="cs-summary">Analyzed and visualized Google Trends data for nine Olympic winter sports to uncover cyclical public interest patterns — identifying event-driven spikes and providing insights to guide content strategy and seasonal marketing timing.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Data Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Google Trends, Excel, Data Visualization</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Sports Analyzed</span>
+      <span class="meta-val">9 Olympic Winter Disciplines</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">MSU Milestone Project</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — The Opportunity</div>
+    <h2>Sports interest is predictable — if you look at the data</h2>
+    <p>For sports media companies, sponsors, and event organizers, one of the most valuable things to know is <strong>when public interest in a sport peaks</strong> — and how far in advance that interest starts building. Get the timing wrong on a campaign and you're spending money either before anyone cares or after they've moved on.</p>
+    <p>Google Trends provides a free, continuous signal of public search interest over time. The challenge is knowing how to extract meaningful patterns from the noise — particularly for sports that only have moment-in-time Olympic spikes every four years.</p>
+    <div class="highlight-block">
+      <p>"Google Trends data is free and publicly available. The competitive advantage isn't having the data — it's knowing how to read it well enough to make decisions others won't."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Methodology</div>
+    <h2>Extracting signal from cyclical data</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Data Collection via Google Trends</strong> Pulled 5-year search interest data for all nine sports: Alpine Skiing, Biathlon, Bobsled, Cross-Country Skiing, Curling, Figure Skating, Ice Hockey, Ski Jumping, and Speed Skating. Exported as CSV and imported into Excel for analysis.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Baseline vs. Peak Calculation</strong> Calculated each sport's baseline interest (average interest score during non-Olympic, non-World Championship months) and compared it to peak interest during event windows. This generated a "spike multiplier" showing how dramatically each sport's audience expands during events.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Lead-Time Analysis</strong> For each sport, measured how many weeks before an Olympic event search interest started to meaningfully rise above baseline — establishing an "interest runway" for each sport that informs campaign launch timing.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Sport-to-Sport Comparison</strong> Built a comparative chart overlaying interest curves for all nine sports across the same time window, making cross-sport comparisons visible at a glance rather than requiring back-and-forth between individual charts.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Seasonal Pattern Identification</strong> Separated Olympic years from non-Olympic years to identify which sports maintain consistent seasonal interest regardless of the games vs. which are almost entirely event-dependent.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Findings</div>
+    <h2>Not all winter sports behave the same way</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">9</span>
+        <h4>Sports Analyzed</h4>
+        <p>Across 5 years of Google Trends data — covering two Winter Olympics cycles for comprehensive pattern identification.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">18×</span>
+        <h4>Peak Spike — Curling</h4>
+        <p>Curling showed the highest spike multiplier of any sport — nearly zero baseline interest exploding to massive search volume during Olympics, making it the purest event-dependent sport in the dataset.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">6 weeks</span>
+        <h4>Average Interest Runway</h4>
+        <p>Across sports, search interest began rising meaningfully about 6 weeks before the Olympic opening ceremony — suggesting campaigns should launch no later than week 7 before the games.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Year-Round</span>
+        <h4>Ice Hockey & Figure Skating</h4>
+        <p>These two sports maintained significant baseline interest in non-Olympic years — driven by NHL seasons and skating competition circuits — making them viable for year-round content strategy.</p>
+      </div>
+    </div>
+    <p>A key strategic finding: <strong>most winter sports are event-dependent, not calendar-dependent</strong>. This means campaigns tied to the calendar (e.g., "winter sports season") will underperform compared to campaigns timed to the event cycle — even in non-Olympic years, World Championships and World Cups drive measurable interest spikes.</p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Strategic Recommendations</div>
+    <h2>Timing is the campaign variable that matters most</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>For Olympic years: launch campaigns 6–7 weeks pre-opening ceremony</strong> This is when audience interest starts building. Early-launch campaigns can ride the organic interest curve rather than fighting for attention at peak when everyone else is spending.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>For non-Olympic years: anchor content to World Championships and World Cups</strong> These events generate measurable (if smaller) interest spikes for most sports. A calendar of these events provides a year-round content framework that doesn't require waiting for the Olympics.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Treat Ice Hockey and Figure Skating as evergreen — all others as event-driven</strong> Only these two sports justify significant off-cycle content investment. For the other seven, concentrate budget around event windows and don't waste spend in the flat baseline periods.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Use Curling's spike as a cultural moment opportunity</strong> Curling's extreme event-dependence means it captures enormous mainstream attention for a short window. Brands with no normal connection to curling can legitimately ride this spike with timely, playful content.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Google Trends</span>
+      <span class="tag">Excel</span>
+      <span class="tag">Trend Analysis</span>
+      <span class="tag">Cyclical Patterns</span>
+      <span class="tag">Content Strategy</span>
+      <span class="tag">Seasonal Marketing</span>
+      <span class="tag">Data Visualization</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-doordash.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>DoorDash Delivery Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-allbirds.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>Allbirds A/B Email Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

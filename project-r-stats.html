@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Statistical Analysis in R — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Statistical Analysis in R
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">06 — Statistical Analysis / R</span>
+  <h1>Global Datasets —<br><em>Statistical Analysis in R</em></h1>
+  <p class="cs-summary">Analyzed global datasets on life expectancy, CO₂ emissions, and electricity access using R and the tidyverse ecosystem — building confidence intervals, running hypothesis tests, and creating publication-quality visualizations with ggplot2.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Statistical Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">R, RStudio, tidyverse, ggplot2</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Methods</span>
+      <span class="meta-val">Confidence Intervals, Hypothesis Testing, Regression</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">MSU — Reasoning with Data</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — Overview</div>
+    <h2>From spreadsheets to statistical programming</h2>
+    <p>Excel is a powerful tool for business analytics — but it has real limits when working with large datasets, complex statistical models, or reproducible research workflows. R and the tidyverse ecosystem are the answer: a programming environment built specifically for data analysis that makes complex statistics accessible and results reproducible.</p>
+    <p>This project applied core statistical methods to three global datasets — life expectancy by country, CO₂ emissions over time, and electricity access rates — to practice the full analytical workflow: <strong>clean, explore, hypothesize, test, visualize, communicate.</strong></p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Methods & Tools</div>
+    <h2>The full statistical toolkit</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">R</span>
+        <div><strong>Data Wrangling with dplyr</strong> Used filter(), mutate(), group_by(), and summarize() to clean and reshape datasets. Handled missing values systematically with is.na() checks and documented all data decisions for reproducibility.</div>
+      </li>
+      <li>
+        <span class="step-n">R</span>
+        <div><strong>Exploratory Data Analysis</strong> Generated summary statistics (mean, median, SD, IQR) and distribution plots for all key variables before any inferential analysis. EDA consistently surfaced the right questions to test rather than assumptions to confirm.</div>
+      </li>
+      <li>
+        <span class="step-n">R</span>
+        <div><strong>Confidence Intervals</strong> Calculated 95% confidence intervals for mean life expectancy by region and for CO₂ emissions trends by income group — communicating uncertainty in estimates rather than false precision.</div>
+      </li>
+      <li>
+        <span class="step-n">R</span>
+        <div><strong>Hypothesis Testing</strong> Ran two-sample t-tests comparing life expectancy between high-income and low-income countries, and chi-square tests examining the relationship between electricity access and income classification. Interpreted p-values with appropriate caution around statistical vs. practical significance.</div>
+      </li>
+      <li>
+        <span class="step-n">R</span>
+        <div><strong>Visualization with ggplot2</strong> Built publication-quality charts: scatter plots with regression lines, faceted bar charts comparing regions, time-series line plots for emissions trends, and choropleth-style heat maps for electricity access rates. Applied consistent themes and color scales throughout.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Findings</div>
+    <h2>What the global data shows</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">19 yrs</span>
+        <h4>Life Expectancy Gap</h4>
+        <p>High-income countries averaged 19 years longer life expectancy than low-income countries — a gap that narrowed significantly from 1990 to 2020 but remained large in absolute terms.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">p &lt; 0.001</span>
+        <h4>Electricity ↔ Income Link</h4>
+        <p>Chi-square testing confirmed a highly significant relationship between electricity access rates and income classification — access is not randomly distributed across income groups.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">3 Regions</span>
+        <h4>Driving Global CO₂ Growth</h4>
+        <p>Three regions accounted for the majority of CO₂ emissions growth over the study period, while several regions showed flat or declining trends — important context for global climate policy discussion.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">R²</span>
+        <h4>GDP Explains ~70% of Variance</h4>
+        <p>Simple linear regression showed GDP per capita explains approximately 70% of the variance in life expectancy across countries — leaving 30% for other factors worth investigating.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — What This Project Demonstrates</div>
+    <h2>Skills applied</h2>
+    <p>Beyond the specific findings, this project demonstrates a set of transferable analytical capabilities that apply across domains:</p>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Reproducible analysis workflow</strong> All code was written in RMarkdown, making the full analysis — from raw data to final charts — reproducible by anyone with the source files. No black boxes, no manual steps.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Statistical literacy, not just computation</strong> Interpreting a p-value correctly, understanding what a confidence interval actually means, and distinguishing statistical from practical significance — these matter more than knowing which function to call.</div>
+      </li>
+      <li>
+        <span class="step-n">✓</span>
+        <div><strong>Data visualization as communication</strong> Every chart was designed to answer a specific question for a specific audience — not to display data for its own sake. Axes are labeled clearly, color is used purposefully, and chart types match the data structures being shown.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">R / RStudio</span>
+      <span class="tag">tidyverse</span>
+      <span class="tag">ggplot2</span>
+      <span class="tag">dplyr</span>
+      <span class="tag">Hypothesis Testing</span>
+      <span class="tag">Confidence Intervals</span>
+      <span class="tag">Linear Regression</span>
+      <span class="tag">RMarkdown</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-allbirds.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>Allbirds A/B Email Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-ai-industry.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>AI Industry Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

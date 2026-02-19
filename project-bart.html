@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BART Ridership Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; BART Ridership Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">02 — Operational Analytics / Excel</span>
+  <h1>BART Ridership<br><em>Data Analysis</em></h1>
+  <p class="cs-summary">Analyzed Bay Area Rapid Transit ridership records to uncover weekday vs. weekend demand patterns, downtown station traffic peaks, and Yellow Line capacity constraints — with data-backed recommendations for service optimization.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Data Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Excel, Pivot Tables, Data Visualization</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Domain</span>
+      <span class="meta-val">Transportation / Operations</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">MSU Global Technology Experience</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — The Problem</div>
+    <h2>A transit system with uneven demand</h2>
+    <p>Public transit agencies face a constant balancing act: deploy too few trains and riders experience overcrowding and delays; deploy too many and operating costs spiral. The key to solving this is <strong>understanding when and where demand actually concentrates</strong> — not guessing.</p>
+    <p>BART's ridership data offered an opportunity to do exactly that: analyze actual boardings by station, day, and time to find the demand patterns that should drive scheduling and capacity decisions.</p>
+    <div class="highlight-block">
+      <p>"Operational analytics at its core is about resource allocation. Every insight needs to connect back to a decision: run more trains, add staff, change schedules, close a gate."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Analysis Approach</div>
+    <h2>Breaking down ridership by every meaningful dimension</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Weekday vs. Weekend Segmentation</strong> Split the dataset into weekday and weekend subsets using Excel's WEEKDAY() function, then built separate pivot tables for each. This revealed dramatically different demand profiles that a combined average would have obscured.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Station-Level Traffic Analysis</strong> Ranked all stations by total boardings and by peak-hour boardings separately — because the busiest overall station isn't always the most congested during rush hour. Used LARGE() and INDEX/MATCH to surface the top 10 stations on each metric.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Yellow Line Capacity Deep-Dive</strong> Isolated all Yellow Line stations and stops, calculated load factors (riders per available seat-mile equivalent) across time windows, and flagged the specific station-hour combinations exceeding capacity thresholds.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Time-of-Day Demand Curves</strong> Built hourly ridership charts for weekday vs. weekend at key stations, making the AM/PM peak structure visible — and revealing that some stations had atypically flat demand curves suggesting different trip-purpose mixes.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Service Optimization Modeling</strong> Used the demand data to model the ridership impact of two scheduling scenarios: increasing Yellow Line frequency during identified peak windows vs. extending service hours on weekends at downtown stations.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Key Findings</div>
+    <h2>Where the system is stressed — and where it's underused</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">3×</span>
+        <h4>Weekday vs. Weekend Gap</h4>
+        <p>Peak weekday ridership at downtown stations ran 3× higher than weekend peaks — but weekend demand was far more evenly distributed across hours, suggesting different scheduling logic is needed for each.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Top 5</span>
+        <h4>Stations Drive 40% of Boardings</h4>
+        <p>Five downtown stations accounted for approximately 40% of system-wide boardings — meaning targeted improvements at these hubs have disproportionate system-wide impact.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Yellow</span>
+        <h4>Line Capacity Crunch</h4>
+        <p>Yellow Line stations showed consistent capacity pressure during the 8–9 AM and 5–6 PM windows on weekdays, with load factors well above comfortable thresholds at peak stops.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Off-Peak</span>
+        <h4>Underutilization Opportunity</h4>
+        <p>Mid-day weekday ridership (10 AM–3 PM) ran at roughly 35% of peak capacity system-wide — suggesting room for off-peak promotional fares to shift demand curves.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Recommendations</div>
+    <h2>Data-backed service decisions</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Increase Yellow Line frequency during identified peak windows</strong> The capacity data clearly supports adding runs during the 8–9 AM and 5–6 PM windows on weekdays at the flagged stations. This directly addresses the most acute pain point in the system.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Shift weekend scheduling logic away from peak-hour assumptions</strong> Weekend demand is flatter and more distributed. Running trains on a commuter schedule on weekends wastes capacity in the morning and undersupplies it in the midday and evening windows.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Explore off-peak fare incentives to flatten weekday demand</strong> If even 10% of peak-hour riders can be shifted to mid-day through pricing, it materially reduces overcrowding without adding a single train run.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Excel</span>
+      <span class="tag">Pivot Tables</span>
+      <span class="tag">Operational Analytics</span>
+      <span class="tag">Demand Analysis</span>
+      <span class="tag">Capacity Planning</span>
+      <span class="tag">Data Visualization</span>
+      <span class="tag">Transportation Data</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-youtube.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>YouTube Trending Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-doordash.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>DoorDash Delivery Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

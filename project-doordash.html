@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DoorDash Delivery Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; DoorDash Delivery Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">03 — Market Analytics / Excel</span>
+  <h1>DoorDash Delivery<br><em>Analysis</em></h1>
+  <p class="cs-summary">Analyzed delivery data across major U.S. markets to surface trends in delivery time, order volume, and cuisine preferences — identifying regional patterns and delivering recommendations to improve efficiency and customer satisfaction.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Data Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Excel, Pivot Tables, VLOOKUP, Data Visualization</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Domain</span>
+      <span class="meta-val">Logistics / E-Commerce / Operations</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">MSU Milestone Project</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — Business Context</div>
+    <h2>Understanding performance across diverse markets</h2>
+    <p>Food delivery is a hyper-local business running on a national platform. What works in San Francisco — dense neighborhoods, short distances, cuisine variety — looks completely different from what drives performance in suburban markets with longer drive times and different cuisine preferences.</p>
+    <p>The goal was to move beyond national averages and understand <strong>how delivery performance, order patterns, and cuisine preferences vary by market</strong> — so that operational decisions could be made at the regional level rather than applied as one-size-fits-all policies.</p>
+    <div class="highlight-block">
+      <p>"National averages are where insight goes to die. The real story is always in the regional breakdown."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Methodology</div>
+    <h2>Multi-dimensional market analysis</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Market Segmentation</strong> Grouped delivery records by market (city/metro area) and calculated summary statistics for each: average delivery time, average order value, order volume, and customer rating. This formed the foundation for all subsequent comparisons.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Delivery Time Analysis</strong> Used pivot tables to break down average delivery time by market, time of day, and day of week. Applied conditional formatting to immediately flag markets with delivery times above the 35-minute threshold where customer satisfaction historically drops.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Cuisine Preference Mapping</strong> Analyzed order share by cuisine category within each market to identify regional preferences. Used VLOOKUP to map cuisine codes to readable category names, then built a stacked bar chart comparing the cuisine mix across top markets.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Order Volume Trend Analysis</strong> Examined weekly order volume patterns by market to identify growth markets vs. declining markets, and flagged the markets showing the widest gap between volume growth and delivery time performance — the most operationally stressed markets.</div>
+      </li>
+      <li>
+        <span class="step-n">05</span>
+        <div><strong>Customer Satisfaction Correlation</strong> Cross-referenced delivery time data with customer rating data to quantify the relationship between late deliveries and rating drops — building the business case for the operational recommendations.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Findings</div>
+    <h2>Regional patterns with real operational implications</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">+12 min</span>
+        <h4>Suburban Delivery Gap</h4>
+        <p>Suburban markets averaged 12 minutes longer delivery times than urban markets — driven by distance, not kitchen prep time, pointing to a Dasher density problem rather than restaurant inefficiency.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">35 min</span>
+        <h4>Satisfaction Cliff</h4>
+        <p>Customer ratings dropped noticeably for orders delivered over 35 minutes. Markets with median times above this threshold showed measurably lower repeat order rates.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">3 Markets</span>
+        <h4>High Volume + High Latency</h4>
+        <p>Three markets showed both top-quartile order volumes and above-average delivery times — the highest-priority targets for operational intervention.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">Regional</span>
+        <h4>Cuisine Preferences Vary Widely</h4>
+        <p>American and fast food dominated suburban markets. Urban markets showed significantly higher shares of Asian, Mediterranean, and health-focused cuisine orders.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Recommendations</div>
+    <h2>Region-specific strategies</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Increase Dasher incentives in the 3 high-volume/high-latency markets</strong> The delivery time gap in these markets is a supply-side problem. Targeted Dasher bonuses during peak hours in these specific markets would have higher ROI than system-wide incentive increases.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Adjust restaurant partner mix by market to match cuisine preferences</strong> Markets with high demand for underserved cuisine categories represent expansion opportunities. Onboarding partners in those categories in those markets directly addresses unfulfilled demand.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Set market-specific delivery time targets rather than global benchmarks</strong> A 30-minute target is achievable in dense urban markets but structurally impossible in low-density suburban markets. Differentiated targets improve both Dasher morale and customer expectations management.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Excel</span>
+      <span class="tag">Pivot Tables</span>
+      <span class="tag">VLOOKUP</span>
+      <span class="tag">Market Analysis</span>
+      <span class="tag">Logistics Analytics</span>
+      <span class="tag">Customer Satisfaction</span>
+      <span class="tag">Regional Strategy</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-bart.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>BART Ridership Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-winter-sports.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>Winter Sports Interest Analysis</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

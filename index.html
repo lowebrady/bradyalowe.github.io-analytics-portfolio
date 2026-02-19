@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brady Lowe — Data Analytics Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --ink: #1A1814;
+      --accent: #C8472B;
+      --mid: #6B6560;
+      --light: #E8E2D6;
+      --card-bg: #FEFCF8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(245,240,232,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--light);
+    }
+
+    .nav-logo {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 3rem;
+      padding-top: 5rem;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: var(--mid);
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--ink);
+      color: var(--cream);
+      padding: 0.9rem 1.75rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      padding: 0.9rem 1.75rem;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      margin-left: 1rem;
+      transition: all 0.25s;
+    }
+
+    .hero-cta-secondary:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .hero-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--light);
+      padding: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .stat-card:nth-child(2) { animation-delay: 0.1s; margin-top: 1.5rem; }
+    .stat-card:nth-child(3) { animation-delay: 0.2s; }
+    .stat-card:nth-child(4) { animation-delay: 0.3s; margin-top: 1.5rem; }
+
+    .stat-number {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--mid);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── SKILLS BAR ── */
+    .skills-strip {
+      background: var(--ink);
+      padding: 1.25rem 3rem;
+      display: flex;
+      gap: 3rem;
+      overflow-x: auto;
+      align-items: center;
+    }
+
+    .skill-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--cream);
+      opacity: 0.7;
+      white-space: nowrap;
+      letter-spacing: 0.08em;
+    }
+
+    .skill-tag.accent { color: var(--accent); opacity: 1; }
+
+    /* ── PROJECTS ── */
+    .projects {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 3.5rem;
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--light);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: start;
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover::before { transform: scaleY(1); }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(26,24,20,0.08);
+    }
+
+    .project-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .project-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .project-card p {
+      color: var(--mid);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--light);
+      color: var(--mid);
+      letter-spacing: 0.06em;
+    }
+
+    .project-arrow {
+      font-size: 1.5rem;
+      color: var(--light);
+      transition: color 0.2s, transform 0.2s;
+      padding-top: 0.25rem;
+    }
+
+    .project-card:hover .project-arrow {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── ABOUT ── */
+    .about {
+      background: var(--ink);
+      padding: 6rem 3rem;
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .about p {
+      color: rgba(245,240,232,0.65);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-stat {
+      border-top: 1px solid rgba(245,240,232,0.15);
+      padding-top: 1.25rem;
+    }
+
+    .about-stat .num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.25rem;
+      color: var(--accent);
+      display: block;
+    }
+
+    .about-stat .label {
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.5);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      color: var(--mid);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--light);
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 500;
+      transition: all 0.25s;
+      background: var(--card-bg);
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateX(4px);
+    }
+
+    .contact-link .icon {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      width: 2rem;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 2rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in { animation: fadeUp 0.7s ease both; }
+    .fade-in-delay { animation: fadeUp 0.7s ease 0.15s both; }
+    .fade-in-delay2 { animation: fadeUp 0.7s ease 0.3s both; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; padding: 1.5rem; padding-top: 6rem; }
+      .hero-visual { display: none; }
+      .projects, .about, .contact { padding: 4rem 1.5rem; }
+      .about-inner, .contact { grid-template-columns: 1fr; gap: 3rem; }
+      .skills-strip { padding: 1rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">BL — ANALYTICS</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="../ux-portfolio/index.html">UX Portfolio →</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text fade-in">
+      <p class="section-label">Data Analytics Portfolio</p>
+      <h1>Brady<br><em>Lowe.</em></h1>
+      <p>Information Science student at MSU turning raw data into clear, actionable insights — through Excel, R, Python, and thoughtful storytelling.</p>
+      <a class="hero-cta" href="#projects">View Projects</a>
+      <a class="hero-cta-secondary" href="/cdn-cgi/l/email-protection#a4c6d6c5c0ddc5c8cbd3c1e4cdc7c8cbd1c08ac7cbc9">Get in Touch</a>
+    </div>
+
+    <div class="hero-visual">
+      <div class="stat-card">
+        <span class="stat-number">6K+</span>
+        <span class="stat-label">YouTube Videos Analyzed</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Data Projects</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Tools: R, Python, Excel</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">3.05</span>
+        <span class="stat-label">GPA @ MSU</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS STRIP -->
+  <div class="skills-strip">
+    <span class="skill-tag accent">// SKILLS</span>
+    <span class="skill-tag">Excel & Pivot Tables</span>
+    <span class="skill-tag">R / RStudio / ggplot2</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">SQL (Basics)</span>
+    <span class="skill-tag">Data Visualization</span>
+    <span class="skill-tag">Statistical Analysis</span>
+    <span class="skill-tag">Dashboard Design</span>
+    <span class="skill-tag">A/B Testing</span>
+    <span class="skill-tag">Google Trends</span>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <p class="section-label">// WORK</p>
+    <h2 class="section-title">Selected Projects</h2>
+
+    <div class="project-grid">
+
+      <a class="project-card" href="project-youtube.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">01 — GLOBAL TECHNOLOGY EXPERIENCE</span>
+          <h3>YouTube Trending Data Analysis</h3>
+          <p>Analyzed 6,000+ trending YouTube videos to surface the performance drivers that separate viral content from the rest. Built pivot tables, histograms, and summary tables in Excel; delivered actionable insights on category performance, engagement rates, and reach optimization strategies.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag">Pivot Tables</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Content Analytics</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-bart.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">02 — GLOBAL TECHNOLOGY EXPERIENCE</span>
+          <h3>BART Ridership Data Analysis</h3>
+          <p>Examined Bay Area Rapid Transit ridership records to uncover weekday vs. weekend demand patterns, downtown station traffic peaks, and Yellow Line capacity constraints. Applied Excel functions and data visualizations to inform service optimization recommendations for transit operations.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag">Operational Analysis</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Transportation Data</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-doordash.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">03 — MILESTONE PROJECT</span>
+          <h3>DoorDash Delivery Analysis</h3>
+          <p>Analyzed delivery data across major U.S. markets to uncover trends in delivery time, order volume, and cuisine preferences. Identified regional patterns and provided data-driven recommendations to improve operational efficiency and customer satisfaction at scale.</p>
+          <div class="tag-row">
+            <span class="tag">Excel</span>
+            <span class="tag">Regional Analysis</span>
+            <span class="tag">KPI Tracking</span>
+            <span class="tag">Logistics Data</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-winter-sports.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">04 — MILESTONE PROJECT</span>
+          <h3>Winter Sports Interest Analysis</h3>
+          <p>Analyzed and visualized Google Trends data for nine Olympic winter sports to uncover cyclical patterns in public interest. Identified key event-driven spikes and translated findings into strategic insights for content planning and seasonal marketing campaigns.</p>
+          <div class="tag-row">
+            <span class="tag">Google Trends</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Trend Analysis</span>
+            <span class="tag">Marketing Insights</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-allbirds.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">05 — MILESTONE PROJECT</span>
+          <h3>Allbirds A/B Email Campaign Analysis</h3>
+          <p>Conducted and analyzed an A/B test on promotional email subject lines for a seasonal marketing campaign. Evaluated open rates, click-through rates, and conversion metrics to provide data-backed recommendations for improving customer engagement and campaign ROI.</p>
+          <div class="tag-row">
+            <span class="tag">A/B Testing</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Email Analytics</span>
+            <span class="tag">Marketing Strategy</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-r-stats.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">06 — COURSEWORK</span>
+          <h3>Statistical Analysis in R</h3>
+          <p>Analyzed global datasets on life expectancy, CO₂ emissions, and electricity access using R and the tidyverse ecosystem. Constructed confidence intervals, performed hypothesis testing, and built publication-quality visualizations with ggplot2 to communicate findings clearly.</p>
+          <div class="tag-row">
+            <span class="tag">R / RStudio</span>
+            <span class="tag">tidyverse</span>
+            <span class="tag">ggplot2</span>
+            <span class="tag">Hypothesis Testing</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+      <a class="project-card" href="project-ai-industry.html" style="text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;">
+        <div>
+          <span class="project-num">07 — SELF-DIRECTED</span>
+          <h3>AI Industry Analysis</h3>
+          <p>Conducted a personal industry analysis on AI-driven transformation across data and technology fields. Assessed emerging roles, skill gaps, and market opportunities to inform long-term career positioning — translating macro trends into actionable professional strategy.</p>
+          <div class="tag-row">
+            <span class="tag">Industry Research</span>
+            <span class="tag">Trend Analysis</span>
+            <span class="tag">Career Strategy</span>
+            <span class="tag">AI/Tech Sector</span>
+          </div>
+        </div>
+        <div class="project-arrow">↗</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div>
+        <p class="section-label" style="color: var(--accent);">// ABOUT</p>
+        <h2>Data-driven by nature, creative by practice.</h2>
+        <p>I'm a rising senior at Michigan State University studying Information Science, with a focus on the Data Analysis track through the Global Technology Experience program. I believe good analysis isn't just about the numbers — it's about telling the right story to the right people.</p>
+        <p>Outside of data work, I'm a freelance graphic designer and the VP of my chapter. I bring the same systems thinking to every project: understand the problem, find the signal in the noise, communicate clearly.</p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat">
+          <span class="num">MSU</span>
+          <span class="label">Michigan State University</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">2026</span>
+          <span class="label">Expected Graduation</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">IS</span>
+          <span class="label">Information Science, B.A.</span>
+        </div>
+        <div class="about-stat">
+          <span class="num">GTE</span>
+          <span class="label">Data Analysis Track</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div>
+      <p class="section-label">// CONTACT</p>
+      <h2>Let's work together.</h2>
+      <p style="color: var(--mid); line-height: 1.75;">Open to data analyst, business analyst, and analytics-adjacent internship and entry-level opportunities. Based in Metro Detroit, open to remote and hybrid roles.</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#6f0d1d0e0b160e0300180a2f060c03001a0b410c0002">
+        <span class="icon">@</span>
+        <span class="__cf_email__" data-cfemail="35574754514c54595a4250755c56595a40511b565a58">[email&#160;protected]</span>
+      </a>
+      <a class="contact-link" href="tel:5862290999">
+        <span class="icon">☏</span>
+        (586) 229-0999
+      </a>
+      <a class="contact-link" href="https://linkedin.com" target="_blank">
+        <span class="icon">in</sp

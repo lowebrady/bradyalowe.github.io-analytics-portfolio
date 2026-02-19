@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Allbirds A/B Email Analysis — Brady Lowe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">BL — ANALYTICS</a>
+  <ul class="nav-links">
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#projects">Projects</a> &nbsp;/&nbsp; Allbirds A/B Email Analysis
+</div>
+
+<section class="cs-hero">
+  <span class="cs-label">05 — A/B Testing / Marketing Analytics</span>
+  <h1>Allbirds A/B<br><em>Email Campaign Analysis</em></h1>
+  <p class="cs-summary">Conducted and analyzed an A/B test on promotional email subject lines for a seasonal marketing campaign — evaluating open rates, click-through rates, and conversions to deliver data-backed recommendations for improving customer engagement.</p>
+  <div class="cs-meta">
+    <div class="meta-item">
+      <span class="meta-label">Role</span>
+      <span class="meta-val">Marketing Analyst</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Tools</span>
+      <span class="meta-val">Excel, Statistical Analysis</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Method</span>
+      <span class="meta-val">A/B Testing, Hypothesis Testing</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Context</span>
+      <span class="meta-val">MSU Milestone Project — Allbirds Case</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="cs-body">
+
+  <div class="cs-section">
+    <div class="cs-section-label">01 — The Business Problem</div>
+    <h2>Email is still the highest-ROI channel — if you get the subject line right</h2>
+    <p>For DTC (direct-to-consumer) brands like Allbirds, email marketing remains one of the highest-ROI channels available. But most email performance lives or dies on one decision: the subject line. It determines whether the email is opened at all — and an email that isn't opened can't convert.</p>
+    <p>The question for this project: <strong>between two subject line strategies — product-focused vs. value/benefit-focused — which drives better performance across the full funnel?</strong> Not just opens, but clicks and conversions too.</p>
+    <div class="highlight-block">
+      <p>"Open rate is a vanity metric if it doesn't connect to revenue. A great subject line that opens but doesn't click-through is just a broken promise to the customer."</p>
+    </div>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">02 — Test Design</div>
+    <h2>Setting up an experiment that actually answers the question</h2>
+    <p>Good A/B testing requires rigorous setup before a single email is sent. Poorly designed tests produce results that look conclusive but aren't.</p>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">01</span>
+        <div><strong>Hypothesis Formulation</strong> H₀: There is no significant difference in open rate between subject line A (product-focused: "Meet Our New Natural Wool Runner") and subject line B (benefit-focused: "Your Most Comfortable Run Yet"). H₁: Subject line B produces a higher open rate.</div>
+      </li>
+      <li>
+        <span class="step-n">02</span>
+        <div><strong>Sample Size & Randomization</strong> Calculated the required sample size to achieve 80% statistical power at a 95% confidence level given the expected baseline open rate. Confirmed random assignment to control and treatment groups to eliminate selection bias.</div>
+      </li>
+      <li>
+        <span class="step-n">03</span>
+        <div><strong>Metrics Definition</strong> Primary metric: open rate. Secondary metrics: click-through rate (CTR) and conversion rate (purchase within 48 hours of email open). Defined all metrics in advance to prevent p-hacking after results came in.</div>
+      </li>
+      <li>
+        <span class="step-n">04</span>
+        <div><strong>Statistical Analysis in Excel</strong> Used Excel's T.TEST() function to calculate p-values for the difference in open rates between variants. Built a results summary table with confidence intervals around each metric estimate.</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">03 — Results</div>
+    <h2>What the test revealed</h2>
+    <div class="findings-grid">
+      <div class="finding-card">
+        <span class="finding-num">+14%</span>
+        <h4>Open Rate Lift (Variant B)</h4>
+        <p>The benefit-focused subject line outperformed the product-focused variant by 14 percentage points in open rate — a statistically significant result at p &lt; 0.05.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">+8%</span>
+        <h4>CTR Lift (Variant B)</h4>
+        <p>Higher open rates translated downstream — variant B also drove an 8% higher click-through rate, confirming that the subject line set better expectations for the email content.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">p &lt; 0.05</span>
+        <h4>Statistically Significant</h4>
+        <p>The open rate difference cleared the pre-defined significance threshold. Results are not attributable to random variation with 95% confidence.</p>
+      </div>
+      <div class="finding-card">
+        <span class="finding-num">+22%</span>
+        <h4>Estimated Revenue Lift</h4>
+        <p>Projecting the CTR improvement across Allbirds' email list size suggests a meaningful revenue lift per campaign send — making the subject line choice a high-leverage decision.</p>
+      </div>
+    </div>
+    <p>An important nuance: while the benefit-focused subject line won on open rate and CTR, the <strong>conversion rate gap was smaller and did not reach statistical significance</strong> with the available sample. This suggests the product-focused variant, while generating fewer opens, may attract a more purchase-intent audience. A follow-up test with a larger sample would be needed to resolve this.</p>
+  </div>
+
+  <div class="cs-section">
+    <div class="cs-section-label">04 — Recommendations</div>
+    <h2>Actionable guidance with appropriate caveats</h2>
+    <ul class="steps-list">
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Default to benefit-focused subject lines for awareness-stage campaigns</strong> The open rate advantage is clear and significant. For campaigns targeting cold or lapsed audiences, benefit framing wins because it speaks to customer outcomes rather than product features most recipients don't yet know.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Consider product-focused lines for high-intent segments</strong> The conversion rate data, while inconclusive, hints that product-focused lines may self-select for more purchase-ready openers. Test this hypothesis on segmented lists of past purchasers or cart abandoners.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Run a follow-up test with 2× sample size to resolve the conversion question</strong> The most important unanswered question is whether the open rate advantage translates to incremental revenue. A larger test with conversion as the primary metric would answer this definitively.</div>
+      </li>
+      <li>
+        <span class="step-n">↳</span>
+        <div><strong>Build a subject line testing cadence into the marketing calendar</strong> One test is a data point. Ten tests across segments and seasons builds a body of evidence that compounds. Systematizing A/B testing turns a one-time insight into an ongoing competitive advantage.</div>
+      </li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">A/B Testing</span>
+      <span class="tag">Excel</span>
+      <span class="tag">Hypothesis Testing</span>
+      <span class="tag">Statistical Significance</span>
+      <span class="tag">Email Marketing</span>
+      <span class="tag">Conversion Analysis</span>
+      <span class="tag">Marketing Analytics</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="project-nav">
+  <a class="proj-nav-link" href="project-winter-sports.html">
+    <span class="nav-dir">← Previous</span>
+    <h4>Winter Sports Interest Analysis</h4>
+  </a>
+  <a class="proj-nav-link right" href="project-r-stats.html">
+    <span class="nav-dir">Next Project →</span>
+    <h4>Statistical Analysis in R</h4>
+  </a>
+</div>
+
+<footer>
+  <p>© 2026 BRADY LOWE — DATA ANALYTICS</p>
+  <p>METRO DETROIT, MI</p>
+</footer>
+
+</body>
+</html>

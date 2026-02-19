@@ -1,0 +1,380 @@
+:root {
+  --cream: #F5F0E8;
+  --ink: #1A1814;
+  --accent: #C8472B;
+  --mid: #6B6560;
+  --light: #E8E2D6;
+  --card-bg: #FEFCF8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  background: rgba(245,240,232,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--light);
+}
+
+.nav-logo {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  padding: 7rem 3rem 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--mid);
+  letter-spacing: 0.08em;
+}
+
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* ── CASE STUDY HERO ── */
+.cs-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem 4rem;
+}
+
+.cs-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.cs-hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.cs-hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.cs-summary {
+  font-size: 1.05rem;
+  color: var(--mid);
+  max-width: 680px;
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.cs-meta {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  border-top: 2px solid var(--light);
+  padding-top: 2rem;
+}
+
+.meta-item .meta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.meta-item .meta-val {
+  font-size: 0.9rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--light);
+}
+
+/* ── CASE STUDY BODY ── */
+.cs-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 3rem 6rem;
+}
+
+.cs-section {
+  margin-bottom: 4.5rem;
+}
+
+.cs-section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cs-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--light);
+}
+
+.cs-section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.cs-section p {
+  color: var(--mid);
+  font-size: 0.975rem;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+
+.cs-section p strong { color: var(--ink); font-weight: 500; }
+
+/* ── HIGHLIGHT BLOCK ── */
+.highlight-block {
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.75rem;
+  background: var(--card-bg);
+  margin: 2rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.highlight-block p {
+  color: var(--ink);
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* ── FINDINGS GRID ── */
+.findings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--light);
+  margin: 2rem 0;
+  border: 1px solid var(--light);
+}
+
+.finding-card {
+  background: var(--card-bg);
+  padding: 1.75rem;
+}
+
+.finding-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.finding-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.finding-card p {
+  font-size: 0.825rem;
+  color: var(--mid);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── STEPS LIST ── */
+.steps-list {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.steps-list li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  font-size: 0.95rem;
+  color: var(--mid);
+  padding: 1.25rem;
+  border: 1px solid var(--light);
+  background: var(--card-bg);
+}
+
+.steps-list li .step-n {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  padding-top: 0.2rem;
+  font-weight: 500;
+}
+
+.steps-list li strong {
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+/* ── OUTCOMES ROW ── */
+.outcomes-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--accent);
+  margin: 2rem 0;
+  border: 1px solid var(--accent);
+}
+
+.outcome {
+  background: var(--cream);
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.outcome .big {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.25rem;
+  color: var(--accent);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.outcome p { font-size: 0.8rem; color: var(--mid); margin: 0; }
+
+/* ── TAGS ── */
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--light);
+  color: var(--mid);
+  background: var(--card-bg);
+}
+
+/* ── PROJECT NAV ── */
+.project-nav {
+  border-top: 1px solid var(--light);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--card-bg);
+}
+
+.proj-nav-link {
+  padding: 2rem 3rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: block;
+}
+
+.proj-nav-link:hover { background: var(--light); }
+.proj-nav-link:first-child { border-right: 1px solid var(--light); }
+
+.proj-nav-link .nav-dir {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--mid);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.proj-nav-link h4 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
+.proj-nav-link.right { text-align: right; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(245,240,232,0.35);
+  letter-spacing: 0.06em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.25rem; }
+  .cs-hero, .cs-body, .breadcrumb { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .cs-meta { gap: 1.5rem; }
+  .project-nav { grid-template-columns: 1fr; }
+  .proj-nav-link { padding: 1.5rem; }
+  .proj-nav-link:first-child { border-right: none; border-bottom: 1px solid var(--light); }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
